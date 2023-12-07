@@ -1,5 +1,3 @@
-import styled from 'styled-components';
-import { Image, View } from 'react-native';
 import { SvgXml } from 'react-native-svg';
 
 import { Spacer } from '../../../components/spacer/spacer.component';
@@ -30,6 +28,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
     isOpenNow = true,
     rating = 4,
     isClosedTemporarily = true,
+    placeId,
   } = restaurant;
 
   const ratingArray = Array.from(new Array(Math.floor(rating)));
@@ -41,18 +40,23 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
         <Text variant='label'>{name}</Text>
         <Section>
           <Rating>
-            {ratingArray.map(() => (
-              <SvgXml key={Math.random()} xml={star} width={20} height={20} />
+            {ratingArray.map((_, i) => (
+              <SvgXml
+                key={`star-${placeId}-${i}`}
+                xml={star}
+                width={20}
+                height={20}
+              />
             ))}
           </Rating>
           <SectionEnd>
-            {isClosedTemporarily && (
+            {isClosedTemporarily ? (
               <Text variant='error'>CLOSED TEMPORARILY</Text>
+            ) : (
+              <Spacer position='left' size='medium'>
+                {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
+              </Spacer>
             )}
-
-            <Spacer position='left' size='medium'>
-              {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
-            </Spacer>
 
             <Spacer position='left' size='medium'>
               <Icon source={{ uri: icon }} />
