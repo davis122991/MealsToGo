@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+import { Image, Platform } from 'react-native';
 import WebView from 'react-native-webview';
-import { Platform } from 'react-native';
+
+import styled from 'styled-components';
 
 import { Text } from '../typography/text.component';
 
@@ -23,12 +24,14 @@ const Item = styled.View`
 `;
 
 const isAndroid = Platform.OS === 'android';
-export const CompactRestaurantInfo = ({ restaurant }) => {
-  const Image = isAndroid ? CompactWebview : CompactImage;
+
+export const CompactRestaurantInfo = ({ restaurant, isMap }) => {
+  const Image = isAndroid && isMap ? CompactWebview : CompactImage;
 
   return (
     <Item>
       <Image source={{ uri: restaurant.photos[0] }} />
+
       <Text center variation='caption' numberOfLines={3}>
         {restaurant.name}
       </Text>
