@@ -21,6 +21,12 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.davis122991.MealsToGo"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a2d2959d-a577-4417-b5e0-b8d132f1a8eb"
       }
     }
   }
