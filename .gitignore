@@ -1,5 +1,7 @@
 # Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 
+src/services/authentication/authentication.service.js
+
 # dependencies
 node_modules/
 

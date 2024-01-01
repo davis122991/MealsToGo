@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "MealsToGo",
-    "slug": "MealsToGo",
+    "slug": "mealstogo",
     "version": "0.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -26,8 +26,9 @@
     },
     "extra": {
       "eas": {
-        "projectId": "a2d2959d-a577-4417-b5e0-b8d132f1a8eb"
+        "projectId": "81afcc92-fdd3-403a-934c-fe69068d98af"
       }
-    }
+    },
+    "owner": "davis122991"
   }
 }
